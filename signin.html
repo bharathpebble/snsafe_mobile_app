@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>snsafe home screen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="asset/materialize-css/css/materialize.min.css">
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">    
+    <link rel="stylesheet" href="asset/css/style.css">
+    <style>
+        .img-wrap {
+            margin: 50px auto 30px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col s6 offset-s3 img-wrap">
+            <img class="responsive-img logo-img" src="asset/images/logo.png">
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <div class="row">
+            <div class="col s6 sin">
+                <a class="waves-effect waves-light btn sn-btn">Signin</a>
+            </div>
+            <div class="col s6 sin">
+                <a class="waves-effect waves-light btn sp-btn">Signup</a>
+            </div>
+        </div>
+    </div>
+    <div class="form-wrap">
+        <div class="toggle-wrapper">
+            <div class="content">
+                <div class="signin-form">
+                    <div class="row">
+                        <div class="col s12">
+                            <form id="sign_in" method="POST" autocomplete="off">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                          <i class="material-icons prefix">account_circle</i>
+                                          <input id="txtusername" name="txtusername" type="text" class="validate">
+                                          <label for="txtusername">User Name</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                          <i class="material-icons prefix">lock</i>
+                                          <input id="txtpassword" name="txtpassword" type="password" class="validate">
+                                          <label for="txtpassword">PassWord</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                   <div class="input-field col s10 offset-s1">
+                                       <a class="waves-effect waves-light btn sign-btn">Signin</a>
+                                   </div>
+                                </div>
+                            </form>
+                            <div class="col s8 offset-s4">
+                                <div class="text-wrap">
+                                    <a>Forgot Passwor ?</a>
+                                    <p>Or Login with</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6 offset-s4">
+                                    <div class="scl-btn-wrap">
+                                        <ul>
+                                            <li>
+                                                <a class="waves-effect waves-light btn-floating social google">
+                                                <i class="fa fa-google"></i> Sign in with google</a>
+                                            </li>
+                                            <li>
+                                                <a class="waves-effect waves-light btn-floating social facebook">
+                                                <i class="fa fa-facebook"></i> Sign in with facebook</a>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <div class="row">
+                        <div class="col s12">
+                            <form id="signupForm" method="POST" autocomplete="off">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                          <i class="material-icons prefix">account_circle</i>
+                                          <input id="txtusername" type="text" class="validate">
+                                          <label for="txtusername">Name</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                          <i class="material-icons prefix">email</i>
+                                          <input id="txtusername" type="email" class="validate">
+                                          <label for="txtusername">Email</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                          <i class="material-icons prefix">lock</i>
+                                          <input id="txtpassword" type="password" class="validate">
+                                          <label for="txtpassword">PassWord</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                          <i class="material-icons prefix">date_range</i>
+                                          <input id="txtusername" type="text" class="datepicker">
+                                          <label for="txtusername">DOB</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                   <div class="input-field col s10 offset-s1">
+                                       <a class="waves-effect waves-light btn sign-btn">Signup</a>
+                                   </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s8 offset-s4">
+                                       <div class="text-wrap">
+                                            <a>Terms & Conditions</a>
+                                       </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="asset/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="asset/materialize-css/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.signup-form').hide();
+            $('.sn-btn').addClass('sn-active');
+            $('.sp-btn').click(function() {
+                $('.sn-btn').removeClass('sn-active');
+                $('.signin-form').hide();
+                $('.sp-btn').addClass('sn-active');
+                $('.signup-form').fadeIn();
+            });
+            $('.sn-btn').click(function() {
+                $('.sp-btn').removeClass('sn-active');
+                $('.signup-form').fadeOut();
+                $('.sn-btn').addClass('sn-active');
+                $('.signin-form').fadeIn();
+            });
+        });
+        
+        /*-------datepicker-----*/
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false // Close upon selecting a date,
+        });
+        
+        /*------ajax request ----*/
+        
+        $('.sign-btn').click(function() {
+            var formValue = new FormData($('#sign_in')[0]);
+            console.log(formValue);
+            $.ajax({
+                url: 'http://rayi.in/snsafe/dev/Login/signIn',
+                type: "POST",
+                data: formValue,
+                contentType: false,
+                processData: false,
+                dataType: "json",
+              
+                success: function (rs) {
+                    if (rs.status === true) {
+                        Materialize.toast('Login Success!', 4000);
+                        $.ajax({
+                            
+                            url:'http://rayi.in/snsafe/dev/mobileapi/Mobile/getSession';
+                            
+                        });
+                        //$('#sign_in')[0].reset();
+                        //$('#signinModal').modal('hide');
+                    //if (rs.user_type = 'admin') {
+                        //window.location.href = "http://localhost/snsafe_mobile_bitbucket/user.html";
+                    //} else //{
+                        //window.location.href = "http://localhost/snsafe_mobile_bitbucket/cutomer.html";
+                    //}
+                    
+                    } else {
+                        Materialize.toast('Login failed ! Invalid Username and Password', 4000);
+                    }
+                },
+                error:function(msg){
+                    Materialize.toast(msg, 4000);
+                }
+               
+            });
+        });
+        
+        /*----Toast-----*/
+        
+    </script>
+</body>
+</html>

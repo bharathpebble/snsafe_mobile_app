@@ -1,0 +1,150 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <title>snsafe home screen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="asset/materialize-css/css/materialize.min.css">
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css">
+    <!-- data table css -->
+    <link rel="stylesheet" href="asset/plugins/jquery datatable/skin/bootstrap/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="asset/css/dataTables.responsive.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col s12 navbar-fixed nav">
+            <nav>
+                <div class="nav-wrapper">
+                    <ul id="slide-out" class="side-nav">
+                        <li><div class="user-view">
+                              <div class="background">
+                                <img src="asset/images/user-img-background.jpg">
+                              </div>
+                              <a href="#!user"><img class="circle" src="asset/images/user.png"></a>
+                              <a href="#!name"><span class="white-text name" id="aname">John Doe</span></a>
+                              <a href="#!email"><span class="white-text email" id="aemail">jdandturk@gmail.com</span></a>
+                            </div></li>
+                        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                        <li><a href="#!">Second Link</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="subheader">Subheader</a></li>
+                        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+                   </ul>
+                   <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li><a href="collapsible.html"><i class="fa fa-cart"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2></h2>
+                    </div>
+                    <div class="body">
+                        
+                        <div class="col-sm-9"></div><button type="button" class="btn btn-primary waves-effect" id="AddUser" data-toggle="tooltip" data-placement="top" title="Add User"><span class="material-icons">add</span></button>&nbsp;&nbsp;<lable>Add User</lable>
+                        <?php } ?>
+                        <table id="table" class="table table-bordered table-striped table-hover dataTable" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <!--<th><?php echo $this->lang->line('DNA_tag'); ?></th>-->
+                                    <th><?php echo $this->lang->line('action'); ?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </div>
+</section>
+<!-- model start-->
+<div class="modal fade in" id="signupModal" tabindex="-1" role="dialog">
+    
+</div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="asset/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="asset/materialize-css/js/materialize.min.js"></script>
+<script type="text/javascript" src="asset/bootstrap/js/bootstrap.min.js"></script>
+<!-- Jquery data table plugin-->
+<script type="text/javascript" src="asset/plugins/jquery-datatable/jquery.dataTables.js"></script>
+<script type="text/javascript" src="asset/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="asset/js/dataTables.responsive.js"></script>
+
+<script>
+    $(".button-collapse").sideNav();
+    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+    //$('.collapsible').collapsible();
+    
+    
+    /*----ajax call for get user list -----*/
+    
+    $(document).ready(function() {
+        
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/snsafe_bitbucket/dev/User/getUser",
+                //contentType: false,
+                //processData: false,
+                //async:false,
+                dataType: "json",
+                success: function (data) {
+                    if (data.status === true) {
+                        alert('data fetched successfuly');     
+                        console.log(data);
+                        $('#aname').append(data.username);
+                        $('#aemail').append(data.email);
+                        //Materialize.toast('Login Success!', 4000);
+                        //$('#sign_in')[0].reset();
+                        //$('#signinModal').modal('hide');
+                       // window.location.href = base_url + "Product";
+                    } else {
+                        Materialize.toast('Login failed ! Invalid Username and Password', 4000);
+                    }
+                },
+                error:function(msg){
+                    Materialize.toast(msg, 4000);
+                }
+               
+            });
+        
+    });
+    
+    
+</script>
+</body>
+</html>

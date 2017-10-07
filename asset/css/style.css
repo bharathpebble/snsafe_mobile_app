@@ -1,0 +1,208 @@
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    
+    body {
+        background: #000046;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    }
+    
+    body .btn-wrap {
+        padding-left: 0;
+        padding-right: 0;
+        
+    }
+    body .btn-wrap .sin {
+        padding-left: 2px;
+        padding-right: 2px;
+        margin-top: 1px;
+    }
+    body .btn-wrap .btn {
+        width: 100%;
+        background-color: rgba(0,0,0,0.5) !important;
+    }
+    body .btn-wrap .sin-btn {
+        padding-right: 5px;
+    }
+    body .signin-btn {
+        top: 0;
+        left: 0;
+        height: 50px;
+        max-width: 50%;
+        background: rgba(0,0,0,0.6);
+        border-right: 1px solid #fff;
+        margin: 0;
+    }
+    body .signup-btn {
+        margin: 0;                    
+        height: 50px;
+        max-width: 50%;
+        background: rgba(0,0,0,0.6);
+    }
+    
+    .signin-btn a {
+        color: #fff !important;
+        font-family: roboto;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 3;
+        padding-left: 40px;
+    }
+    .signup-btn a {
+        color: #fff !important;
+        font-family: roboto;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 3;
+        padding-left: 40px;
+    }
+    .img-wrap {
+        margin-left: 90px !important;
+    }
+    .logo-img {
+        height: 80px;
+        width: 200px;
+    }
+    .search-bar .tagin {
+        border-bottom-color: #fff;
+    }
+    .search-bar label {
+        color: #fff;
+    }
+    .search-bar .input-field input[type=text]:focus + label {
+         color: #F5F5F5;
+    }
+    .search-bar .input-field input[type=text]:focus {
+         border-bottom: 1px solid #F5F5F5;
+         box-shadow: 0 1px 0 0 #F5F5F5;
+    }
+    .search-bar .input-field .prefix.active {
+        color: #000;
+    }
+    .input-group .search-icn {
+        background: cornflowerblue;
+        border: none;
+        border-bottom: 1px solid #fff;
+        z-index: 100;
+    }
+    #product_list {
+        border: none;
+    }
+    .form-line {
+        width:100%;
+    }
+    
+    .btn-signin {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .form-wrap a.forget {
+        font-size: 12px;
+        color: #fff;
+        margin-left: 80px;
+        margin-bottom: 20px;
+    }
+    
+    
+    .signin-form, .signup-form .input-field input[type=text]:focus + label {
+         color: #F5F5F5;
+    }
+    .signin-form, .signup-form .input-field input[type=text]:focus {
+         border-bottom: 1px solid #F5F5F5;
+         box-shadow: 0 1px 0 0 #F5F5F5;
+    }
+    .signin-form, .signup-form .input-field .prefix.active {
+        color: #F5F5F5;
+    }
+    
+    .signin-form, .signup-form .input-field input[type=password]:focus + label {
+         color: #F5F5F5;
+    }
+    .signin-form, .signup-form .input-field input[type=password]:focus {
+         border-bottom: 1px solid #F5F5F5;
+         box-shadow: 0 1px 0 0 #F5F5F5;
+    }
+    .signin-form .sign-btn {
+        background-color: deepskyblue;
+        width: 100%;
+    }
+    .signup-form .sign-btn {
+        background-color: deepskyblue;
+        width: 100%;
+    }
+    .signup-form .input-field input[type=email]:focus + label {
+         color: #F5F5F5;
+    }
+    .signup-form .input-field input[type=email]:focus {
+         border-bottom: 1px solid #F5F5F5;
+         box-shadow: 0 1px 0 0 #F5F5F5;
+    }
+    .content {
+        position: relative;
+    }
+    
+    .signin-form, .signup-form {
+        position: absolute;
+        width: 100%;
+    }
+    
+    .signin-form .text-wrap a{
+        color: #fff;
+        font-weight: 400;
+        font-size: 12px;
+    }
+    .signup-form .text-wrap a{
+        color: #fff;
+        font-weight: 400;
+        font-size: 12px;
+    }
+    .signin-form .text-wrap p{
+        color: tomato;
+    }
+    
+    .signin-form .scl-btn-wrap ul {
+        list-style-type: none;
+    }
+    .signin-form .scl-btn-wrap ul li {
+        float: left;
+        padding-right: 20px;
+    }
+    .signin-form .scl-btn-wrap .facebook {
+        background-color: #3B5998;
+    }
+    .signin-form .scl-btn-wrap .google {
+        background-color: #d34836;
+    }
+    .sn-active {
+        border-top: 3px solid #cc181e;
+    }
+    
+    
+    
+    /*-----customer_view------*/
+    
+    .nav {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+} 
